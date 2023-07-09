@@ -9,3 +9,5 @@ The client sends an onchain request on an interval, and the backend service proc
 Here is a simple workflow for this oracle design for each client request:
 
 ![ETH price oracle](workflow.png)
+
+You can read more about the Basic Request Model at the [Chainlink docs](https://docs.chain.link/architecture-overview/architecture-request-model).

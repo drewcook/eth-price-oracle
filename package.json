@@ -1,0 +1,29 @@
+{
+  "name": "eth-price-oracle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:server": "ts-node ethPriceOracle.ts",
+    "start:client": "ts-node client.ts",
+    "start": "npm run start:server && npm run start:client",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "genkey:oracle": "node scripts/keygen.ts oracle/oracle_private_key",
+    "genkey:caller": "node scripts/keygen.ts caller/caller_private_key",
+    "deploy:oracle": "cd oracle && npx truffle migrate --network extdev --reset -all && cd ..",
+    "deploy:caller": "cd caller && npx truffle migrate --network extdev --reset -all && cd ..",
+    "deploy:all": "npm run deploy:oracle && npm run deploy:caller"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.2",
+    "axios": "^1.4.0",
+    "bn.js": "^5.2.1",
+    "loom-js": "^1.90.0",
+    "loom-truffle-provider": "^0.13.0",
+    "truffle": "^5.10.2",
+    "ts-node": "^10.9.1"
+  }
+}

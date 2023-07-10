@@ -8,8 +8,9 @@
     "start:client": "ts-node client.ts",
     "start": "npm run start:server && npm run start:client",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "genkey:oracle": "node scripts/keygen.ts oracle/oracle_private_key",
-    "genkey:caller": "node scripts/keygen.ts caller/caller_private_key",
+    "keygen:caller": "node scripts/keygen.ts caller/caller_private_key",
+    "keygen:oracle": "node scripts/keygen.ts oracle/oracle_private_key",
+    "keygen": "npm run keygen:caller && npm run keygen:oracle",
     "deploy:oracle": "cd oracle && npx truffle migrate --network extdev --reset -all && cd ..",
     "deploy:caller": "cd caller && npx truffle migrate --network extdev --reset -all && cd ..",
     "deploy:all": "npm run deploy:oracle && npm run deploy:caller"

@@ -11,3 +11,27 @@ Here is a simple workflow for this oracle design for each client request:
 ![ETH price oracle](workflow.png)
 
 You can read more about the Basic Request Model at the [Chainlink docs](https://docs.chain.link/architecture-overview/architecture-request-model).
+
+## How To Run
+
+The project are two truffle projects (one for each contract), with a backend and frontend in Node/JS. To run both the client and the server. Available commands are:
+
+Install dependencies
+
+```
+npm i
+```
+
+Compile and deploy both contracts to the Loom network.
+
+```
+npm run deploy:all
+```
+
+_Note: the private keys are meaningless and generated via the `loom-js` package. You can choose to use new keys by running the following:
+
+```
+npm run keygen
+```
+
+Run both the client and the server, which will start pinging the caller contract for the current price every interval and process the queue accordingly, calling multiple oracles, computing the average price, and returning it to the client.
